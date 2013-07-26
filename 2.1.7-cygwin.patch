@@ -1,11 +1,11 @@
 --- origsrc/Clock/AppRun	2004-10-23 06:32:24.000000000 -0500
 +++ src/Clock/AppRun	2009-10-19 23:26:14.350812300 -0500
-@@ -5,6 +5,8 @@ PROG=Clock
- APP_DIR=`dirname "$0"`
- APP_DIR=`cd "$APP_DIR";pwd`; export APP_DIR
+@@ -11,7 +11,7 @@ if [ "x$PLATFORM" = x ]; then
+ 	i?86) ARCH=ix86 ;;
+   esac
  
-+export PLATFORM="CYGWIN-ix86"
-+
- if [ "x$PLATFORM" = x ]; then
-   ARCH=`uname -m`
-   case $ARCH in
+-  PLATFORM=`uname -s`-$ARCH export PLATFORM
++  PLATFORM=CYGWIN-$ARCH ; export PLATFORM
+ fi
+ 
+ if [ "x$MAKE" = x ]; then
